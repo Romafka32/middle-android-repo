@@ -3,7 +3,7 @@ package com.example.androidpracticumcustomview
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.activity.ComponentActivity
 import com.example.androidpracticumcustomview.ui.theme.CustomContainer
 
@@ -21,19 +21,20 @@ class XmlActivity : ComponentActivity() {
             finish()
         }
 
-        val firstView = TextView(this).apply {
-            // TODO
-            // ...
+        val firstImgView: ImageView = ImageView(this).apply {
+            setImageResource(R.drawable.img_god)
         }
 
-        val secondView = TextView(this).apply {
-            // TODO
-            // ...
+        val secondImgView: ImageView = ImageView(this).apply {
+            setImageResource(R.drawable.img_divil)
         }
+
+
+        customContainer.addView(firstImgView)
 
         // Добавление второго элемента через некоторое время (например, по задержке)
         Handler(Looper.getMainLooper()).postDelayed({
-            customContainer.addView(secondView)
-        }, 2000)
+            customContainer.addView(secondImgView)
+        }, 0)
     }
 }
